@@ -16,7 +16,6 @@
                                     <img src="{{ url('/images/sample2_pfp.jpg') }}"
                                         class="img-fluid img-thumbnail rounded mx-auto d-block"
                                         style="width: 75%; height: 75%" alt="...">
-
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                               <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">Dropdown</button>
@@ -28,7 +27,7 @@
                                                 <a class="dropdown-item" href="#">Separated link</a>
                                               </div>
                                             </div>
-                                            <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                                            <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="ENTER BARCODE">
                                           </div>
                                 </div>
                             </div>

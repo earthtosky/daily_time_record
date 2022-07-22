@@ -34,6 +34,7 @@ $app->singleton(
 $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
     App\Console\Kernel::class
+
 );
 
 $app->singleton(
@@ -51,5 +52,5 @@ $app->singleton(
 | from the actual running of the application and sending responses.
 |
 */
-
+'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class
 return $app;
