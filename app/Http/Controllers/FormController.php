@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Knp\Snappy\Pdf;
+use Barryvdh\Snappy\Facades\SnappyPdf as PDF;
+use App;
 
 class FormController extends Controller
 {
@@ -14,7 +15,6 @@ class FormController extends Controller
      */
     public function index()
     {
-        //
     }
 
     /**
@@ -22,9 +22,12 @@ class FormController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        if ($request->isMethod('post')) {
+            $name = $request->input('name');
+            $period = $request->input('period');
+        }
     }
 
     /**
@@ -46,7 +49,6 @@ class FormController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**
@@ -83,13 +85,17 @@ class FormController extends Controller
         //
     }
 
-    public function print_pdf(){
-        $form_file = view('print_forms.c1form');
-        $temp_file = tempnam(sys_get_temp_dir(), 'pdf_');
-        file_put_contents($temp_file, $form_file);
-        $pdf_file = $temp_file . '.pdf';
-        exec('wkhtmltopdf ' . $temp_file . ' ' . $pdf_file);
-
-        $pdf_file = PDF::loadview('print_forms.c1form');
+    public function print_form(Request $request)
+    {
+        $name = $request->input('fname_field');
+        $period = $request->input('timeperiod');
+        $download = $request->input('downloadpdf');
+        $pdf = App::make('snappy.pdf.wrapper');
+        $pdf = PDF::loadView('print_forms.c1form', compact('name', 'period', 'download'));
+        if ($request->has('downloadpdf')) {
+            return $pdf->download('c1form.pdf');
+        } else {
+            return $pdf->inline();
+        }
     }
 }

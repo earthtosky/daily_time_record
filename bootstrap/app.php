@@ -52,5 +52,4 @@ $app->singleton(
 | from the actual running of the application and sending responses.
 |
 */
-'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class
 return $app;

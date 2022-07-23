@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\FormController;
 use Illuminate\Support\Facades\Route;
-
+use Barryvdh\Snappy\Facades\SnappyPdf as PDF;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,15 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 Route::get('/dtr', function () {
     return view('dtr');
 })->middleware(['auth'])->name('dtr');
 
-Route::get('/c1form', function () {
-    return view('form');
-})->middleware(['auth'])->name('c1form');
+Route::get('/wkhtmltopdf',[FormController::class,'print_form'])->name('print_data');
