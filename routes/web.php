@@ -26,3 +26,5 @@ Route::get('/dtr', function () {
 Route::get('/c1form', function () {
     return view('form');
 })->middleware(['auth'])->name('c1form');
+
+Route::get('/', [UserController::class, 'index']);
