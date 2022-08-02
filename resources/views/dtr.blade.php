@@ -77,59 +77,6 @@
                     </div>
                 </div>
             </div>
-            <div class="py-12">
-                <div class="max-w-7xl mx-auto">
-                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                        <div class="p-6 bg-white border-b border-gray-200">
-                            <div class="container min-vh-110 min-vw-50">
-                                <form method="get" action="/wkhtmltopdf">
-                                    @csrf
-                                    <h2 style="text-align: center;"><label for="Manual Time In Form">Download or View HTML to PDF</label></h2>
-                                    <div class="row">
-                                        <div class="col-sm-8">
-                                            <div class="form-group">
-                                                <div class="input-group input-group-lg">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text"
-                                                            id="inputGroup-sizing-lg">FullName</span>
-                                                    </div>
-                                                    <input type="text" name="fname_field" id="fname"
-                                                        class="form-control" aria-label="Large"
-                                                        aria-describedby="inputGroup-sizing-sm"
-                                                        placeholder="{{ Auth::user()->name }}" required>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <select id="timeperiod" name="timeperiod" class="form-control-lg form-control" required>
-                                                    <option value="Time In">Time In</option>
-                                                    <option value="Start Lunch">Start Lunch</option>
-                                                    <option value="End Lunch">End Lunch</option>
-                                                    <option value="Time Out">Time Out</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col text-center">
-                                                    <div class="custom-control custom-switch">
-                                                        <input type="checkbox" class="custom-control-input" id="download" name="downloadpdf" value="on">
-                                                        <label class="custom-control-label" for="download">Download Only</label>
-                                                      </div>
-                                                    <button type="submit" class="btn btn-dark ">Submit</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <script type="text/javascript">

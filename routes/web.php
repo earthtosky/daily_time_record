@@ -24,12 +24,12 @@ Route::get('/dtr', function () {
     return view('dtr');
 })->middleware(['auth'])->name('dtr');
 
-<<<<<<< HEAD
-Route::get('/c1form', function () {
-    return view('form');
-})->middleware(['auth'])->name('c1form');
+// <<<<<<< HEAD
+// Route::get('/c1form', function () {
+//     return view('form');
+// })->middleware(['auth'])->name('c1form');
 
-Route::get('/', [UserController::class, 'index']);
-=======
-Route::get('/wkhtmltopdf',[FormController::class,'print_form'])->name('print_data');
->>>>>>> 2c9ccb2fac975e4b69b7f1a988b32900c5eb9e20
+// Route::get('/', [UserController::class, 'index']);
+// =======
+// Route::get('/wkhtmltopdf',[FormController::class,'print_form'])->name('print_data');
+// >>>>>>> 2c9ccb2fac975e4b69b7f1a988b32900c5eb9e20
